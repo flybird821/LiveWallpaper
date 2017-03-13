@@ -58,4 +58,10 @@
         android:onClick="onLiveWallpaper"
         android:text="@string/set_live_wallpaper" />
 
+    <Button
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:onClick="clearWallpaper"
+        android:text="@string/clear_wallpaper" />
+
 </LinearLayout>
