@@ -1,12 +1,15 @@
-package com.coolspan.livewallpaper;
+package com.coolspan.livewallpaper.ui;
 
 import android.app.WallpaperManager;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.coolspan.livewallpaper.R;
+import com.coolspan.livewallpaper.util.WallpaperUtil;
 
 import java.io.IOException;
 
@@ -19,6 +22,8 @@ import java.io.IOException;
  * author:Coolspan
  */
 public class MainActivity extends AppCompatActivity {
+
+    private final static int REQUEST_CODE_SET_WALLPAPER = 0x001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +40,11 @@ public class MainActivity extends AppCompatActivity {
     public void onSetWallpaperForResource(View view) {
         WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
         try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                //WallpaperManager.FLAG_LOCK  WallpaperManager.FLAG_SYSTEM
-                wallpaperManager.setResource(R.raw.wallpaper, WallpaperManager.FLAG_SYSTEM);
-            }
+            wallpaperManager.setResource(R.raw.wallpaper);
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            //WallpaperManager.FLAG_LOCK  WallpaperManager.FLAG_SYSTEM
+//                wallpaperManager.setResource(R.raw.wallpaper, WallpaperManager.FLAG_SYSTEM);
+//            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -75,6 +81,22 @@ public class MainActivity extends AppCompatActivity {
 //            clearWallpaper();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void onLiveWallpaper(View view) {
+        WallpaperUtil.setLiveWallpaper(this.getApplicationContext(), MainActivity.this, MainActivity.REQUEST_CODE_SET_WALLPAPER);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE_SET_WALLPAPER) {
+            if (resultCode == RESULT_OK) {
+                // TODO: 2017/3/13 设置动态壁纸成功
+            } else {
+                // TODO: 2017/3/13 取消设置动态壁纸
+            }
         }
     }
 }

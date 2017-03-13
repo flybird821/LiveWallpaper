@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">LiveWallpaper</string>
+
+    <string name="wallpaper_name">LiveWallpaper(Coolspan)</string>
+    <string name="static_wallpaper">静态壁纸</string>
+    <string name="use_resource_wallpaper">使用资源文件设置壁纸</string>
+    <string name="use_bitmap_wallpaper">使用Bitmap设置壁纸</string>
+    <string name="clear_wallpaper">清除壁纸</string>
+    <string name="live_wallpaper">动态壁纸</string>
+    <string name="set_live_wallpaper">设置动态壁纸</string>
 </resources>

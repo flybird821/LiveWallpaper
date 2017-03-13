@@ -4,29 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.coolspan.livewallpaper.MainActivity">
+    tools:context="com.coolspan.livewallpaper.ui.MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/static_wallpaper"
+        android:textColor="#0099cd" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSetWallpaperForResource"
-        android:text="使用资源文件设置壁纸" />
+        android:text="@string/use_resource_wallpaper" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onSetWallpaperForBitmap"
-        android:text="使用Bitmap设置壁纸" />
+        android:text="@string/use_bitmap_wallpaper" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="163dp"
         android:layout_height="wrap_content"
         android:onClick="clearWallpaper"
-        android:text="清除壁纸" />
+        android:text="@string/clear_wallpaper" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="#ff0000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/live_wallpaper"
+        android:textColor="#0099cd" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:onClick="onLiveWallpaper"
+        android:text="@string/set_live_wallpaper" />
 
 </LinearLayout>
